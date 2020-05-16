@@ -229,7 +229,7 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 	if(istype(user, /mob/living/carbon/human) || istype(user,/mob/living/silicon) || isobserver(user))
 		var/mob/M = user
 		var/dat
-		dat = text("<HEAD><TITLE>Newscaster</TITLE></HEAD><H3>Newscaster Unit #[unit_no]</H3>")
+		dat = text("<meta charset=\"utf-8\"><HEAD><TITLE>Newscaster</TITLE></HEAD><H3>Newscaster Unit #[unit_no]</H3>")
 
 		scan_user(M) //Newscaster scans you
 
@@ -1058,7 +1058,7 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 
 /obj/item/weapon/newspaper/attack_self(mob/user as mob)
 	if(ishuman(user))
-		var/dat
+		var/dat = "<meta charset=\"utf-8\">"
 		pages = 0
 		switch(screen)
 			if(NEWSPAPER_TITLE_PAGE) //Cover

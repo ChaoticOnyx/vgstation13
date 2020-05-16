@@ -56,7 +56,8 @@
 
 	user.set_machine(src)
 	var/area/this_area = get_area(src)
-	var/t = "<TT><B>Foam Dispenser</B> ([this_area.name])<HR>"
+	var/t = "<meta charset=\"utf-8\">"
+	t += "<TT><B>Foam Dispenser</B> ([this_area.name])<HR>"
 
 	if(src.locked && !istype(user, /mob/living/silicon) && !isAdminGhost(user))
 		t += "<I>(Swipe ID card to unlock control panel.)</I><BR>"

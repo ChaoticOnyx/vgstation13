@@ -55,7 +55,7 @@
 
 	updatemodules()
 
-	var/dat = {"<HEAD><TITLE>Operating Computer</TITLE><META HTTP-EQUIV='Refresh' CONTENT='10'></HEAD><BODY>"}
+	var/dat = {"<meta charset=\"utf-8\"><HEAD><TITLE>Operating Computer</TITLE><META HTTP-EQUIV='Refresh' CONTENT='10'></HEAD><BODY>"}
 	if(!isnull(src.optable) && (src.optable.check_victim()))
 		src.victim = src.optable.victim
 		dat += {"

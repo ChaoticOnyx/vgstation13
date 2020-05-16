@@ -598,7 +598,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	if(usr.isDead())
 		to_chat(usr, "You can't do that because you are dead!")
 		return
-	var/HTML = "<html><head><title>AI PDA Message Log</title></head><body>[tnote]</body></html>"
+	var/HTML = "<html><meta charset=\"utf-8\"><head><title>AI PDA Message Log</title></head><body>[tnote]</body></html>"
 	usr << browse(HTML, "window=log;size=400x444;border=1;can_resize=1;can_close=1;can_minimize=0")
 
 /mob/living/silicon/ai/proc/cmd_show_message_log()
@@ -606,7 +606,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		to_chat(usr, "You can't do that because you are dead!")
 		return
 	if(!isnull(aiPDA))
-		var/HTML = "<html><head><title>AI PDA Message Log</title></head><body>[aiPDA.tnote]</body></html>"
+		var/HTML = "<html><meta charset=\"utf-8\"><head><title>AI PDA Message Log</title></head><body>[aiPDA.tnote]</body></html>"
 		usr << browse(HTML, "window=log;size=400x444;border=1;can_resize=1;can_close=1;can_minimize=0")
 	else
 		to_chat(usr, "You do not have a PDA. You should make an issue report about this.")
@@ -668,7 +668,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		var/datum/asset/simple/C = new/datum/asset/simple/pda()
 		send_asset_list(user.client, C.assets)
 
-	var/dat = list()
+	var/dat = "<meta charset=\"utf-8\">"
 	dat += {"
 	<html>
 	<head><title>Personal Data Assistant</title></head>

@@ -142,7 +142,7 @@
 	return 0
 
 /datum/mind/proc/show_memory(mob/recipient)
-	var/output = "<TITLE>Your memory</TITLE><B>[current.real_name]'s memory</B><HR>"
+	var/output = "<meta charset=\"utf-8\"><TITLE>Your memory</TITLE><B>[current.real_name]'s memory</B><HR>"
 
 	if (memory)
 		output += memory
@@ -169,7 +169,7 @@
 		alert("Ticker and Game Mode aren't initialized yet!", "Alert")
 		return
 
-	var/out = {"<TITLE>Role Panel</TITLE><B>[name]</B>[(current&&(current.real_name!=name))?" (as [current.real_name])":""] - key=<b>[key]</b> [active?"(synced)":"(not synced)"]<br>
+	var/out = {"<meta charset=\"utf-8\"><TITLE>Role Panel</TITLE><B>[name]</B>[(current&&(current.real_name!=name))?" (as [current.real_name])":""] - key=<b>[key]</b> [active?"(synced)":"(not synced)"]<br>
 		Assigned job: [assigned_role] - <a href='?src=\ref[src];job_edit=1'>(edit)</a><hr>"}
 	if(current && current.client)
 		out += "Desires roles: [current.client.GetRolePrefs()]<BR>"
