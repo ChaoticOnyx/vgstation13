@@ -26,7 +26,7 @@
 	if(..())
 		return
 	user.set_machine(src)
-	var/dat = list()
+	var/dat = "<meta charset=\"utf-8\">"
 	if(screen == 0)
 		dat += "<A href='?src=\ref[src];lock=1'>Unlock Console</A>"
 	else if(screen == 1)

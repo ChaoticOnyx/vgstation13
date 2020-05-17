@@ -371,7 +371,8 @@
 
 
 /obj/machinery/bodyscanner/proc/format_occupant_data(var/list/occ,var/print_exceptions=0)
-	var/dat = "<font color='blue'><b>Scan performed at [occ["stationtime"]]</b></font><br>"
+	var/dat = "<meta charset=\"utf-8\">"
+	dat += "<font color='blue'><b>Scan performed at [occ["stationtime"]]</b></font><br>"
 	dat += "<font color='blue'><b>Occupant Statistics:</b></font><br>"
 	var/aux
 	switch (occ["stat"])

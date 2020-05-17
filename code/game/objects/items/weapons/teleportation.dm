@@ -28,11 +28,11 @@
 
 /obj/item/weapon/locator/attack_self(mob/user as mob)
 	user.set_machine(src)
-	var/dat
+	var/dat = "<meta charset=\"utf-8\">"
 	if (src.temp)
-		dat = "[src.temp]<BR><BR><A href='byond://?src=\ref[src];temp=1'>Clear</A>"
+		dat += "[src.temp]<BR><BR><A href='byond://?src=\ref[src];temp=1'>Clear</A>"
 	else
-		dat = {"
+		dat += {"
 <B>Persistent Signal Locator</B><HR>
 Frequency:
 <A href='byond://?src=\ref[src];freq=-10'>-</A>
@@ -56,7 +56,7 @@ Frequency:
 	if ((usr.contents.Find(src) || (in_range(src, usr) && istype(src.loc, /turf))))
 		usr.set_machine(src)
 		if (href_list["refresh"])
-			src.temp = "<B>Persistent Signal Locator</B><HR>"
+			src.temp = "<meta charset=\"utf-8\"><B>Persistent Signal Locator</B><HR>"
 			var/turf/sr = get_turf(src)
 
 			if (sr)

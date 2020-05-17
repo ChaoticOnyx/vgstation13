@@ -17,15 +17,15 @@
 
 
 /proc/to_utf8(var/message, var/mob_or_client)
-	return LIBVG("to_utf8", _determine_encoding(mob_or_client), message)
+	return message
 
 // Converts a byte string to a UTF-8 string, sanitizes it and caps the length.
 /proc/utf8_sanitize(var/message, var/mob_or_client, var/length = MAX_MESSAGE_LEN)
-	return LIBVG("utf8_sanitize", _determine_encoding(mob_or_client), message, num2text(length))
+	return trim(copytext(sanitize(message), 1, MAX_MESSAGE_LEN))
 
 // Get the length (Unicode Scalars) of a UTF-8 string.
 /proc/utf8_len(var/message)
-	return text2num(LIBVG("utf8_len", message))
+	return text2num(message)
 
 /proc/utf8_byte_len(var/a)
 	return length(a)
@@ -34,7 +34,7 @@
 	return text2num(LIBVG("utf8_find", haystack, needle, "[start]", "[end]"))
 
 /proc/utf8_copy(var/text, var/start=1, var/end=0)
-	return LIBVG("utf8_copy", text, "[start]", "[end]")
+	return text
 
 /proc/utf8_replace(var/text, var/from, var/to_, var/start=1, var/end=0)
 	return LIBVG("utf8_replace", text, from, to_, "[start]", "[end]")

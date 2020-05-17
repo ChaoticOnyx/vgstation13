@@ -186,7 +186,7 @@
 
 
 /obj/machinery/suit_storage_unit/attack_hand(mob/user as mob)
-	var/dat
+	var/dat = "<meta charset=\"utf-8\">"
 	if(..())
 		return
 	if(stat & NOPOWER)
@@ -203,7 +203,7 @@
 		//onclose(user, "ssu_m_panel")
 	else if(isUV) //The thing is running its cauterisation cycle. You have to wait.
 
-		dat += {"<HEAD><TITLE>Suit storage unit</TITLE></HEAD>
+		dat += {"<meta charset=\"utf-8\"><HEAD><TITLE>Suit storage unit</TITLE></HEAD>
 			<font color ='red'><B>Unit is cauterising contents with selected UV ray intensity. Please wait.</font></B><BR>"}
 		//dat+= "<font colr='black'><B>Cycle end in: [cycletimeleft()] seconds. </font></B>"
 		//user << browse(dat, "window=ssu_cycling_panel;size=400x500")
